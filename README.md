@@ -9,9 +9,11 @@
 
 ## 📌 Problem Statement
 
-**Problem Statement: Reinventing Mathematics Education Through Technology**
+**Problem Statement 1 – Weave AI magic with Groq**
 
-Math has traditionally been taught and learned in isolation, leading to anxiety and disengagement. SolvYaar addresses this by creating an interactive, personalized learning environment that makes math more approachable and engaging.
+**Problem Statement 2 – Unleash blockchain gameplay with Monad**
+
+**Problem Statement 3 – Real-Time Data Experiences with Fluvio**
 
 ---
 
