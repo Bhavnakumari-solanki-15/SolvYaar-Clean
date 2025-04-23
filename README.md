@@ -1,28 +1,29 @@
-![image](https://github.com/user-attachments/assets/80141219-fa4a-48d1-b144-f506519671d9)
+![image](https://github.com/user-attachments/assets/701dc801-da79-4438-985d-4ab85b3b3326)
 
 
-# 🚀 SolvYaar - Collaborative Math Learning Platform
+# 🚀 SolvYaar - AI-Powered Math Learning Platform
 
-> Transforming how students learn math through real-time collaboration and AI assistance
+> Transforming how students learn math through interactive exercises and personalized AI assistance
 
 ---
 
 ## 📌 Problem Statement
 
-**Problem Statement: Reinventing Mathematics Education Through Collaborative Technology**
+**Problem Statement: Reinventing Mathematics Education Through Technology**
 
-Math has traditionally been taught and learned in isolation, leading to anxiety and disengagement. SolvYaar addresses this by creating a social, interactive learning environment.
+Math has traditionally been taught and learned in isolation, leading to anxiety and disengagement. SolvYaar addresses this by creating an interactive, personalized learning environment that makes math more approachable and engaging.
 
 ---
 
 ## 🎯 Objective
 
-SolvYaar bridges the gap between traditional math learning and modern collaborative tools by creating a platform where students can:
-- Work together in real-time on complex math problems
+SolvYaar bridges the gap between traditional math learning and modern educational tools by creating a platform where students can:
+- Work on complex math problems with step-by-step guidance
 - Receive personalized AI assistance when stuck
 - Visualize abstract mathematical concepts
-- Learn from diverse mathematical perspectives
+- Learn from diverse mathematical perspectives through unique personas
 - Earn achievements that celebrate progress
+- Create and share math-themed memes to make learning fun
 
 Our platform serves students, educators, and learning communities by making math more accessible, interactive, and enjoyable.
 
@@ -42,9 +43,9 @@ Our platform serves students, educators, and learning communities by making math
 ### Our Approach:
 
 * **Problem Identification**: We observed that students often struggle with math in isolation, with limited feedback and support
-* **Solution Design**: We created a multi-faceted platform combining real-time collaboration tools with AI assistance
+* **Solution Design**: We created a multi-faceted platform combining interactive tools with AI assistance
 * **Innovation Focus**: We developed unique features like math personas and achievement NFTs to make learning engaging
-* **Technical Challenge**: We solved complex issues around real-time whiteboard collaboration and formula rendering
+* **Technical Challenge**: We solved complex issues around formula rendering and AI integration
 
 ---
 
@@ -53,26 +54,25 @@ Our platform serves students, educators, and learning communities by making math
 ### Core Technologies Used:
 
 * **Frontend:** React 18, TypeScript, Tailwind CSS, Framer Motion
-* **Backend:** Node.js, Express, Socket.io, WebRTC
-* **Database:** Supabase (PostgreSQL), Redis
+* **Backend:** Node.js, Express
+* **Database:** Supabase (PostgreSQL)
 * **APIs:** Groq LLM API, KaTeX, MathJax
 * **Hosting:** Vercel (frontend), Render (backend)
 
 ### Sponsor Technologies Used:
 
 * **Groq:** Powering our AI math mentor with state-of-the-art large language models
-* **Fluvio:** Enabling real-time streaming data for collaborative sessions
 * **Monad:** Implementing blockchain-based achievement badges as NFTs
 
 ---
 
 ## ✨ Key Features
 
-* ✅ **Collaborative Learning Spaces**: Create or join math study rooms with whiteboard, chat, and problem-solving tools
-* ✅ **AI-powered Math Assistant**: Get step-by-step guidance with personalized hints when you're stuck
-* ✅ **Interactive Visualizations**: See abstract concepts come to life with dynamic, manipulable graphics
+* ✅ **AI-powered Math Solver**: Get step-by-step solutions to any math problem
+* ✅ **Math Mentor**: Personalized AI tutoring with adaptive learning paths
+* ✅ **Interactive Visualizations**: See abstract concepts come to life with dynamic graphics
 * ✅ **Math Persona Chats**: Learn from different perspectives - from Ancient Greek mathematicians to modern experts
-* ✅ **Achievement System**: Earn NFT badges for completing challenges and helping others
+* ✅ **Achievement System**: Earn NFT badges for completing challenges and mastering topics
 * ✅ **Math Meme Creator**: Make learning fun by creating and sharing math-themed memes
 * ✅ **Formula Library**: Access a comprehensive collection of formulas with examples and explanations
 
@@ -102,7 +102,6 @@ Our platform serves students, educators, and learning communities by making math
 * npm or yarn
 * Supabase account
 * Groq API key
-* Web browser with WebRTC support
 
 ### Local Setup:
 
@@ -120,15 +119,6 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_GROQ_API_KEY=your_groq_api_key
 
 # Start development server
-npm run dev
-```
-
-### Collaborative Server Setup:
-
-```bash
-# Setup collaborative server
-cd server
-npm install
 npm run dev
 ```
 
@@ -151,15 +141,14 @@ npm run dev
 * [Supabase](https://supabase.com/) for database and authentication services
 * [Framer Motion](https://www.framer.com/motion/) for smooth, engaging animations
 * [Tailwind CSS](https://tailwindcss.com/) for responsive design
-* [Socket.io](https://socket.io/) for real-time collaboration features
 * [KaTeX](https://katex.org/) for fast, beautiful math rendering
 
 ---
 
 ## 🏁 Final Words
 
-Building SolvYaar has been a journey of discovery and innovation. We faced numerous challenges, from implementing real-time collaborative features to ensuring seamless AI integration. But seeing students collaborate and engage with mathematics in new ways makes it all worthwhile.
+Building SolvYaar has been a journey of discovery and innovation. We faced numerous challenges, from ensuring seamless AI integration to creating intuitive, accessible math visualizations. But seeing students engage with mathematics in new ways makes it all worthwhile.
 
-We believe SolvYaar represents the future of math education - one where learning is social, interactive, and personalized. We're excited to continue developing and refining our platform to help students around the world discover the joy of mathematical thinking together.
+We believe SolvYaar represents the future of math education - one where learning is interactive and personalized. We're excited to continue developing and refining our platform to help students around the world discover the joy of mathematical thinking.
 
 ---
