@@ -1,4 +1,4 @@
-![github-submission-banner](https://placehold.co/1200x300/3B82F6/FFFFFF?text=SolvYaar+-+Math+Learning+Revolution)
+![github-submission-banner](https://placehold.co/1200x300/3B82F6/FFFFFF?text=HackHazards+2025+-+SolvYaar+Submission)
 
 # 🚀 SolvYaar - Collaborative Math Learning Platform
 
