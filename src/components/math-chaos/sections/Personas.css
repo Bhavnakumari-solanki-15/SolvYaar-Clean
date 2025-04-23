@@ -1,0 +1,303 @@
+.personas-container {
+  @apply min-h-screen w-full p-4;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.selection-title {
+  @apply text-2xl font-bold text-center mb-8;
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.personas-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto;
+}
+
+.persona-card {
+  @apply p-6 rounded-lg border-2 cursor-pointer backdrop-blur-md;
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+  transition: all 0.3s ease;
+}
+
+.persona-card:hover {
+  box-shadow: 0 0 25px hsl(var(--primary) / 0.5);
+  transform: translateY(-5px);
+}
+
+.persona-avatar {
+  @apply text-4xl mb-4 flex justify-center items-center;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.persona-title {
+  @apply text-lg font-semibold mb-2 opacity-80;
+}
+
+.persona-description {
+  @apply text-sm opacity-70;
+}
+
+.chat-container {
+  @apply max-w-4xl mx-auto rounded-lg overflow-hidden;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+}
+
+.chat-header {
+  @apply p-4 flex items-center justify-between border-b;
+  border-color: hsl(var(--border));
+}
+
+.header-actions {
+  @apply flex items-center gap-2;
+}
+
+.history-button {
+  @apply flex items-center;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+.persona-info {
+  @apply flex items-center gap-4;
+}
+
+.back-button {
+  @apply px-4 py-2 rounded-lg border;
+  border-color: hsl(var(--border));
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: hsl(var(--secondary) / 0.8);
+}
+
+.xp-counter {
+  @apply flex items-center gap-2;
+  color: hsl(var(--accent));
+  text-shadow: 0 0 10px hsl(var(--accent));
+}
+
+.xp-icon {
+  @apply w-5 h-5 animate-pulse;
+}
+
+.history-container {
+  @apply p-6 h-[500px] overflow-y-auto;
+}
+
+.history-title {
+  @apply text-2xl font-bold mb-6 text-center;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+.sessions-list {
+  @apply space-y-4;
+}
+
+.session-card {
+  @apply p-4 rounded-lg border border-gray-700 cursor-pointer;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.session-card:hover {
+  border-color: #00fffc;
+  box-shadow: 0 0 15px rgba(0, 255, 252, 0.3);
+}
+
+.session-info {
+  @apply flex items-center justify-between;
+}
+
+.session-date {
+  @apply text-gray-400;
+}
+
+.session-xp {
+  @apply flex items-center gap-2 text-yellow-400;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.messages-container {
+  @apply h-[500px] overflow-y-auto p-4 space-y-4;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 252, 0.5) rgba(0, 0, 0, 0.3);
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 252, 0.5);
+  border-radius: 3px;
+}
+
+.message {
+  @apply p-4 rounded-lg max-w-[80%] break-words;
+}
+
+.message.user {
+  @apply ml-auto bg-blue-600/20 border border-blue-500/50;
+}
+
+.message.persona {
+  @apply mr-auto;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.message.typing {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 0.75rem 1rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.chat-input {
+  @apply p-4 border-t border-gray-800 flex gap-2;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.message-input {
+  @apply flex-1 bg-gray-900/50 border border-gray-700 text-white rounded-lg px-4 py-2;
+}
+
+.message-input:focus {
+  @apply outline-none border-cyan-500;
+  box-shadow: 0 0 10px rgba(0, 255, 252, 0.3);
+}
+
+.send-button {
+  @apply rounded-lg px-4 py-2 transition-all duration-200 disabled:opacity-50;
+}
+
+.send-button:hover:not(:disabled) {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                -0.025em 0.05em 0 #fffc00;
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                -0.025em 0.05em 0 #fffc00;
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                0 -0.05em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                0 -0.05em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff,
+                -0.025em -0.05em 0 #fffc00;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.2),
+                0 0 10px hsl(var(--primary) / 0.2);
+  }
+  to {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3),
+                0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+.session-actions {
+  @apply flex items-center gap-3;
+}
+
+.delete-button {
+  @apply p-1.5 rounded-lg transition-all duration-200 !important;
+  color: #ff4444;
+  opacity: 0.7;
+}
+
+.delete-button:hover:not(:disabled) {
+  color: #ff6666;
+  opacity: 1;
+  background: rgba(255, 68, 68, 0.1);
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+}
+
+.delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-sessions {
+  @apply text-center py-8 text-gray-400;
+  text-shadow: 0 0 10px rgba(0, 255, 252, 0.2);
+}
+
+.chat-header h2 {
+  @apply text-2xl font-bold mb-6 text-center;
+  text-shadow: 0 0 5px hsl(var(--primary) / 0.3);
+} 

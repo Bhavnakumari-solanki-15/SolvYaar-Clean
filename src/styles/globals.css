@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 252 95.1% 55.5%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83.3% 57.8%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 252 95.1% 55.5%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 83.3% 57.8%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 252 95.1% 55.5%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 95.1% 55.5%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 262 83.3% 57.8%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 252 95.1% 55.5%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 83.3% 57.8%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 252 95.1% 55.5%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* === New Global Responsive Utilities === */
+
+/* Touch-friendly interactive elements */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Improved tap areas for small buttons */
+.tap-area {
+  @apply p-3;
+}
+
+/* Prevent text overflow in containers */
+.text-safe {
+  @apply break-words overflow-hidden;
+}
+
+/* Responsive image sizing */
+.img-responsive {
+  @apply max-w-full h-auto object-cover;
+}
+
+/* Responsive font sizes using clamp */
+.text-responsive-xs {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+}
+
+.text-responsive-sm {
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+}
+
+.text-responsive-base {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+}
+
+.text-responsive-xl {
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+}
+
+.text-responsive-2xl {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+}
+
+.text-responsive-3xl {
+  font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+}
+
+.text-responsive-4xl {
+  font-size: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+}
+
+.text-responsive-5xl {
+  font-size: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+}
+
+/* Responsive spacing */
+.spacing-responsive-sm {
+  padding: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+}
+
+.spacing-responsive-base {
+  padding: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+}
+
+.spacing-responsive-lg {
+  padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+/* Container width constraints */
+.container-mobile {
+  @apply w-full px-4 mx-auto;
+  max-width: 100%;
+}
+
+.container-tablet {
+  @apply w-full px-6 mx-auto;
+  max-width: 768px;
+}
+
+.container-desktop {
+  @apply w-full px-8 mx-auto;
+  max-width: 1280px;
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile-first approach media queries */
+/* Small phones (< 480px) - Most styles should be already mobile-first */
+/* Only use for extreme small screens */
+@media (max-width: 479px) {
+  .hide-xs {
+    display: none !important;
+  }
+  
+  /* Extra small screen adjustments */
+  .text-responsive-5xl {
+    font-size: clamp(2.5rem, 2rem + 2.5vw, 3rem);
+  }
+}
+
+/* Mobile devices (< 768px) */
+@media (max-width: 767px) {
+  .hide-sm {
+    display: none !important;
+  }
+  
+  /* Smaller buttons on mobile */
+  .btn-mobile {
+    @apply py-2 px-3 text-sm;
+  }
+  
+  /* Stack elements vertically */
+  .stack-mobile {
+    @apply flex flex-col;
+  }
+  
+  /* Reduce padding */
+  .compact-mobile {
+    @apply p-3;
+  }
+}
+
+/* Tablets (< 1024px) */
+@media (max-width: 1023px) {
+  .hide-md {
+    display: none !important;
+  }
+  
+  /* Adjust grid layouts */
+  .grid-tablet {
+    @apply grid-cols-2;
+  }
+}
+
+/* Laptops/Desktops (≥ 1024px) */
+@media (min-width: 1024px) {
+  .show-md-only {
+    display: none !important;
+  }
+}
+
+/* Override hover behavior for touch devices */
+@media (hover: none) {
+  .hover-effect {
+    @apply transition-none transform-none shadow-none;
+  }
+} 

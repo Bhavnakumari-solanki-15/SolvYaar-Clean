@@ -1,0 +1,239 @@
+.hot-takes-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  min-height: 100%;
+}
+
+.hot-takes-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hot-takes-header h2 {
+  font-size: 2rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hot-takes-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+}
+
+.take-categories {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff00ff;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background: rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.category-button.active {
+  background: rgba(255, 0, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.new-take-form {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 0, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-take-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.take-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.take-input:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.take-textarea {
+  width: 100%;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+
+.take-textarea:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.generate-button {
+  background: #ff00ff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.generate-button:hover:not(:disabled) {
+  background: #ff33ff;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.generate-button:disabled {
+  background: rgba(255, 0, 255, 0.3);
+  cursor: not-allowed;
+}
+
+.hot-takes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.take-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 255, 252, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.take-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 252, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.take-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.take-header h3 {
+  color: #00fffc;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.take-category {
+  background: rgba(0, 255, 252, 0.2);
+  border: 1px solid rgba(0, 255, 252, 0.3);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  color: #00fffc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.take-content {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.take-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.take-votes {
+  display: flex;
+  gap: 1rem;
+}
+
+.vote-button {
+  background: none;
+  border: 2px solid #ff00ff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vote-button.agree {
+  border-color: #00ff00;
+}
+
+.vote-button.disagree {
+  border-color: #ff0000;
+}
+
+.vote-button:hover {
+  background: rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.take-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} 

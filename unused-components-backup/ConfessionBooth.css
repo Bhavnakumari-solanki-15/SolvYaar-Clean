@@ -1,0 +1,240 @@
+.confession-booth-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  min-height: 100%;
+}
+
+.confession-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.confession-header h2 {
+  font-size: 2rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.sin-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.confession-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 0, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.confession-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.confession-box textarea {
+  width: 100%;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+
+.confession-box textarea:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.confess-button {
+  background: #ff0000;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.confess-button:hover:not(:disabled) {
+  background: #ff3333;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.confess-button:disabled {
+  background: rgba(255, 0, 0, 0.3);
+  cursor: not-allowed;
+}
+
+.confession-response {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 255, 252, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.confession-response::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 252, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.confession-content {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.confession-text {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.confession-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.priest-response {
+  color: #00fffc;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.redemption-challenge {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 0, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.redemption-challenge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 0, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.redemption-challenge h3 {
+  color: #ffff00;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.redemption-challenge p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.redemption-input {
+  display: flex;
+  gap: 1rem;
+}
+
+.redemption-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.redemption-input input:focus {
+  outline: none;
+  border-color: #ffff00;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.redemption-input button {
+  background: #ffff00;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.redemption-input button:hover:not(:disabled) {
+  background: #ffff33;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.redemption-input button:disabled {
+  background: rgba(255, 255, 0, 0.3);
+  cursor: not-allowed;
+}
+
+.redemption-success {
+  background: rgba(0, 255, 0, 0.1);
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.redemption-success h3 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.redemption-success p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} 

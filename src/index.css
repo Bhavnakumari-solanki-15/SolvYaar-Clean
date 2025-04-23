@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 28%;
+
+    --accent: 262 59% 92%;
+    --accent-foreground: 262 83% 58%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 14% 46%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 59% 92%;
+    --sidebar-accent-foreground: 262 83% 58%;
+    --sidebar-border: 262 83% 88%;
+    --sidebar-ring: 262 83% 58%;
+
+    --nav-item: 262 83% 58%;
+    --nav-item-hover: 262 83% 48%;
+    --nav-item-active: 262 83% 38%;
+
+    --math-grid-color: 262 83% 58%;
+    --math-grid-size: 40px;
+    --math-grid-strength: 0.05;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 262 59% 12%;
+    --accent-foreground: 262 83% 58%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262 83% 58%;
+
+    --sidebar-background: 260 15% 12%;
+    --sidebar-foreground: 260 5% 96%;
+    --sidebar-primary: 260 75% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 15% 16%;
+    --sidebar-accent-foreground: 260 5% 96%;
+    --sidebar-border: 260 15% 16%;
+    --sidebar-ring: 260 70% 60%;
+
+    --math-grid-color: 262 83% 58%;
+    --math-grid-strength: 0.1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Math editor styles */
+.math-editor {
+  @apply min-h-[120px] p-4 rounded-xl border border-border bg-card text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all w-full;
+}
+
+.math-editor:empty:before {
+  content: "Enter your math problem or upload a file...";
+  @apply text-muted-foreground;
+}
+
+/* LaTeX styles */
+.katex-render {
+  @apply p-4 rounded-lg bg-secondary text-foreground overflow-x-auto shadow-sm;
+}
+
+/* Input method styles */
+.input-method-btn {
+  @apply flex items-center justify-center p-2 rounded-lg transition-all border-2 bg-white text-gray-700 hover:bg-accent hover:text-accent-foreground hover:border-primary/50 shadow-sm font-medium;
+}
+
+.input-method-btn.active {
+  @apply bg-primary text-white border-primary shadow-md font-semibold;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-8 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 
+         hover:from-indigo-600 hover:to-indigo-700 text-white font-medium 
+         shadow-lg shadow-indigo-500/30 transition-all duration-300
+         hover:shadow-indigo-500/50 hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm
+         hover:bg-white/10 text-white font-medium transition-all duration-300
+         hover:-translate-y-1;
+}
+
+/* Button gradients */
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-semibold shadow-sm hover:shadow-md transition-all duration-300 rounded-lg px-4 py-2;
+}
+
+/* Solve button specific style */
+.solve-btn {
+  @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:opacity-90;
+}
+
+/* History item styling */
+.history-item {
+  @apply p-4 border border-border rounded-xl transition-all hover:shadow-md hover:border-primary bg-card text-foreground;
+}
+
+/* Tooltip styles */
+.tooltip {
+  @apply bg-popover text-popover-foreground py-1 px-2 rounded shadow-md text-sm border border-border;
+}
+
+/* Graph container */
+.graph-container {
+  @apply w-full h-[300px] md:h-[400px] border border-border rounded-xl p-4 bg-card text-foreground shadow-sm;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Card styles */
+.card-gradient {
+  @apply bg-gradient-to-br from-card to-secondary/80 backdrop-blur-sm;
+}
+
+.feature-card {
+  @apply border border-border/50 rounded-xl p-5 hover:shadow-md transition-all;
+}
+
+/* Input styles */
+.fancy-input {
+  @apply rounded-xl border border-input bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all shadow-sm;
+}
+
+/* Mic animation */
+.mic-active {
+  @apply animate-glow;
+}
+
+/* Navigation styles */
+.nav-item {
+  @apply text-gray-700 hover:text-primary transition-colors;
+}
+
+.nav-item.active {
+  @apply text-primary font-medium;
+}
+
+/* Example page specific styles */
+.example-card {
+  @apply bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-primary/30 transition-all;
+}
+
+.example-title {
+  @apply text-gray-900 font-semibold;
+}
+
+.example-description {
+  @apply text-gray-600;
+}
+
+.math-expression {
+  @apply bg-gray-100 text-gray-900 p-4 rounded-xl font-medium text-center my-4 shadow-sm;
+}
+
+.category-button {
+  @apply bg-gray-600 text-white hover:bg-primary hover:text-white transition-all px-6 py-2 rounded-full font-medium;
+}
+
+/* Try example button */
+.try-example-btn {
+  @apply w-full text-primary hover:text-white hover:bg-primary bg-white border-2 border-primary/20 
+         rounded-xl py-3 px-6 font-medium transition-all flex items-center justify-center gap-2;
+}
+
+/* Background grid pattern styles */
+.section-background {
+  @apply relative overflow-hidden;
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .section-background {
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+/* Section-specific background styles */
+.solver-section {
+  @apply relative;
+}
+
+.solver-section::before {
+  content: '';
+  @apply absolute inset-0 pointer-events-none;
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+.dark .solver-section::before {
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+/* Add a subtle gradient overlay */
+.section-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background;
+  z-index: 1;
+}
+
+/* Content wrapper to ensure content stays above grid */
+.section-content {
+  @apply relative z-10;
+}
+
+/* Example page text styles */
+.example-heading {
+  @apply text-gray-900 text-3xl font-bold text-center mb-4;
+}
+
+.example-subtitle {
+  @apply text-gray-600 text-lg text-center mb-8;
+}
+
+/* Example card styles */
+.example-problem-text {
+  @apply text-gray-900 text-center mb-6 font-medium;
+}
+
+/* Math notation styles */
+.math-notation {
+  @apply text-gray-900 font-medium;
+}
+
+/* Ensure text visibility in light mode */
+.light-mode {
+  .example-heading,
+  .math-notation,
+  .example-problem-text {
+    @apply text-gray-900;
+  }
+  
+  .example-subtitle {
+    @apply text-gray-600;
+  }
+  
+  .math-expression {
+    @apply bg-gray-100 text-gray-900 border border-gray-200;
+  }
+}
+
+/* 3D Mathematical Grid Background */
+.math-3d-grid {
+  background-color: hsl(var(--background));
+  background-image: 
+    /* X-axis lines */
+    linear-gradient(90deg, 
+      hsla(var(--math-grid-color) / var(--math-grid-strength)) 1px, 
+      transparent 1px
+    ),
+    linear-gradient(90deg, 
+      hsla(var(--math-grid-color) / calc(var(--math-grid-strength) * 0.5)) 1px, 
+      transparent 1px
+    ),
+    /* Y-axis lines */
+    linear-gradient(0deg, 
+      hsla(var(--math-grid-color) / var(--math-grid-strength)) 1px, 
+      transparent 1px
+    ),
+    linear-gradient(0deg, 
+      hsla(var(--math-grid-color) / calc(var(--math-grid-strength) * 0.5)) 1px, 
+      transparent 1px
+    ),
+    /* Diagonal lines for 3D effect */
+    linear-gradient(45deg, 
+      hsla(var(--math-grid-color) / calc(var(--math-grid-strength) * 0.3)) 1px, 
+      transparent 1px
+    ),
+    linear-gradient(-45deg, 
+      hsla(var(--math-grid-color) / calc(var(--math-grid-strength) * 0.3)) 1px, 
+      transparent 1px
+    );
+  background-size: 
+    var(--math-grid-size) var(--math-grid-size),
+    calc(var(--math-grid-size) / 4) calc(var(--math-grid-size) / 4),
+    var(--math-grid-size) var(--math-grid-size),
+    calc(var(--math-grid-size) / 4) calc(var(--math-grid-size) / 4),
+    calc(var(--math-grid-size) * 2) calc(var(--math-grid-size) * 2),
+    calc(var(--math-grid-size) * 2) calc(var(--math-grid-size) * 2);
+  background-position: 
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  animation: grid-movement 60s linear infinite;
+}
+
+@keyframes grid-movement {
+  0% {
+    background-position: 
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position: 
+      var(--math-grid-size) var(--math-grid-size),
+      calc(var(--math-grid-size) / 4) calc(var(--math-grid-size) / 4),
+      var(--math-grid-size) 0,
+      calc(var(--math-grid-size) / 4) 0,
+      calc(var(--math-grid-size) * 2) calc(var(--math-grid-size) * 2),
+      calc(var(--math-grid-size) * 2) calc(var(--math-grid-size) * 2);
+  }
+}
+
+/* Add these custom styles for our landing page animations */
+
+.glass-panel {
+  @apply rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+/* Enhanced glass panels for the equations */
+.glass-panel-equation {
+  @apply rounded-xl bg-indigo-900/50 backdrop-blur-md border border-indigo-500/30 shadow-lg px-4 py-2 text-white/90;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-400;
+}
+
+.particle {
+  @apply absolute rounded-full bg-white/20 pointer-events-none;
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+  33% {
+    transform: translateY(-10px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(15px) translateX(-15px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-5px) translateX(5px) rotate(0);
+  }
+}
+
+.float {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: floatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Staggered animation for text entries */
+.stagger-animate > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerIn 0.5s ease forwards;
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animate > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animate > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animate > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animate > *:nth-child(5) { animation-delay: 0.5s; }

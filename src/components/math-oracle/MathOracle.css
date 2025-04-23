@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400;700&display=swap');
+
+.math-oracle-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0f1729, #1a103f);
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.oracle-title-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.oracle-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  font-size: 2rem;
+  animation: sparkle 1.5s infinite;
+}
+
+.oracle-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.fortune-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.reveal-button {
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #d946ef);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(123, 97, 255, 0.5);
+  margin-bottom: 2rem;
+}
+
+.reveal-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(123, 97, 255, 0.6);
+}
+
+.reveal-button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.loading-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fortune-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.fortune-content {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fortune-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.scrolls-section {
+  margin-top: 3rem;
+}
+
+.scrolls-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.no-scrolls {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.lock-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6366f1;
+}
+
+.scrolls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.scroll-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.scroll-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-icon {
+  font-size: 2rem;
+  color: #d946ef;
+  margin-bottom: 1rem;
+}
+
+.scroll-text {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.scroll-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .section-content {
+    padding: 0 1rem;
+  }
+  
+  .oracle-title {
+    font-size: 2.5rem;
+  }
+  
+  .oracle-description {
+    font-size: 1rem;
+  }
+  
+  .fortune-card {
+    padding: 1.5rem;
+  }
+  
+  .fortune-content {
+    font-size: 1rem;
+  }
+  
+  .scrolls-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scrolls-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oracle-title {
+    font-size: 2rem;
+  }
+  
+  .sparkle {
+    font-size: 1.5rem;
+    top: -3px;
+    right: -10px;
+  }
+  
+  .reveal-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .fortune-card {
+    padding: 1rem;
+  }
+  
+  .fortune-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .no-scrolls {
+    padding: 2rem 1rem;
+  }
+} 

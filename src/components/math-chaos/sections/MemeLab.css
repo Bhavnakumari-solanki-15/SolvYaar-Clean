@@ -1,0 +1,867 @@
+.meme-lab-container {
+  padding: 2rem;
+  background: hsl(var(--background));
+  border-radius: 1rem;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.meme-lab-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, hsl(var(--primary) / 0.03) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.meme-lab-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.meme-lab-header h2 {
+  font-size: 2rem;
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: hsl(var(--foreground));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.meme-lab-header p {
+  color: hsl(var(--accent));
+  font-size: 1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.header-sparkles {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  color: hsl(var(--primary));
+  animation: float 3s ease-in-out infinite;
+}
+
+.meme-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  background: hsl(var(--card));
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid hsl(var(--border));
+  backdrop-filter: blur(10px);
+}
+
+.meme-input {
+  background: hsl(var(--input)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  color: hsl(var(--input-foreground)) !important;
+  padding: 1.2rem 1.8rem !important;
+  border-radius: 1rem !important;
+  font-size: 1.2rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(5px);
+  width: 100% !important;
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.1) !important;
+}
+
+.meme-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.2) !important;
+  transform: translateY(-2px);
+  border-color: hsl(var(--accent)) !important;
+}
+
+.meme-input::placeholder {
+  color: hsl(var(--input-foreground) / 0.5) !important;
+}
+
+.meme-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.generate-button {
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent))) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  font-weight: bold !important;
+  padding: 1.2rem 2.5rem !important;
+  border-radius: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-size: 1rem !important;
+  min-width: 200px !important;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2) !important;
+}
+
+.generate-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--primary-foreground) / 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.generate-button:hover::before {
+  left: 100%;
+}
+
+.generate-button:hover:not(:disabled) {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.4) !important;
+  letter-spacing: 3px !important;
+}
+
+.generate-button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+.chaos-button {
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent))) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  font-weight: bold !important;
+  padding: 1.2rem 2.5rem !important;
+  border-radius: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: none !important;
+  font-size: 1rem !important;
+  min-width: 200px !important;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2) !important;
+}
+
+.chaos-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--primary-foreground) / 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.chaos-button:hover::before {
+  left: 100%;
+}
+
+.chaos-button:hover:not(:disabled) {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.4) !important;
+  letter-spacing: 3px !important;
+  animation: glitch 0.3s infinite;
+}
+
+.chaos-button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+}
+
+/* Update existing glitch animation */
+@keyframes glitch {
+  0% {
+    transform: translate(0, -3px) skew(0deg);
+  }
+  20% {
+    transform: translate(-2px, -1px) skew(2deg);
+  }
+  40% {
+    transform: translate(2px, -3px) skew(-2deg);
+  }
+  60% {
+    transform: translate(-2px, -3px) skew(1deg);
+  }
+  80% {
+    transform: translate(2px, -1px) skew(-1deg);
+  }
+  100% {
+    transform: translate(0, -3px) skew(0deg);
+  }
+}
+
+.error-message {
+  background: hsl(var(--error) / 0.1);
+  border: 2px solid hsl(var(--error));
+  color: hsl(var(--error));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.meme-result {
+  background: hsl(var(--card) / 0.3);
+  border: 2px solid hsl(var(--primary));
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.meme-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.meme-info h3 {
+  color: hsl(var(--primary));
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+.template-name {
+  color: hsl(var(--accent));
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.meme-display {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.meme-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.2);
+  transition: transform 0.3s ease;
+}
+
+.meme-image:hover {
+  transform: scale(1.02);
+}
+
+.meme-stats {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.vote-count {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: hsl(var(--primary-foreground));
+}
+
+.vote-count span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meme-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  background: hsl(var(--card) / 0.3);
+  border: 1px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  min-width: 120px;
+}
+
+.action-button:hover {
+  background: hsl(var(--primary) / 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
+}
+
+.vote-hot {
+  border-color: hsl(var(--error));
+  color: hsl(var(--error));
+}
+
+.vote-hot:hover {
+  background: hsl(var(--error) / 0.1);
+  box-shadow: 0 0 15px hsl(var(--error) / 0.2);
+}
+
+.vote-cold {
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary));
+}
+
+.vote-cold:hover {
+  background: hsl(var(--primary) / 0.1);
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
+}
+
+.hall-of-fame-button {
+  border-color: hsl(var(--accent));
+  color: hsl(var(--accent));
+}
+
+.hall-of-fame-button:hover {
+  background: hsl(var(--accent) / 0.1);
+  box-shadow: 0 0 15px hsl(var(--accent) / 0.2);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.template-selection {
+  margin-bottom: 2rem;
+}
+
+.template-selection h3 {
+  color: hsl(var(--primary-foreground));
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  background: transparent;
+}
+
+.template-card {
+  background: transparent;
+  border: 2px solid hsl(var(--accent));
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.template-card.selected {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+.template-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  animation: none;
+}
+
+.template-preview {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.template-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.template-card h4 {
+  color: hsl(var(--primary-foreground));
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.template-card p {
+  color: hsl(var(--primary-foreground) / 0.8);
+  font-size: 0.9rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group button:first-child {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.button-group button:first-child:hover:not(:disabled) {
+  background: hsl(var(--primary) / 0.8);
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.3);
+}
+
+.button-group button:disabled {
+  background: hsl(var(--card) / 0.1);
+  color: hsl(var(--primary-foreground) / 0.3);
+  cursor: not-allowed;
+}
+
+.meme-preview {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background: hsl(var(--card) / 0.3);
+  border: 2px solid hsl(var(--primary) / 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.meme-preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.meme-preview h3 {
+  color: hsl(var(--primary));
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.meme-preview img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.caption {
+  color: hsl(var(--primary-foreground));
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: hsl(var(--card) / 0.3);
+  border-radius: 8px;
+}
+
+.vote-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vote-button.hot {
+  background: hsl(var(--error) / 0.2);
+  color: hsl(var(--error));
+}
+
+.vote-button.hot:hover {
+  background: hsl(var(--error) / 0.3);
+  box-shadow: 0 0 10px hsl(var(--error) / 0.3);
+}
+
+.vote-button.cold {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary));
+}
+
+.vote-button.cold:hover {
+  background: hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+.save-button {
+  background: hsl(var(--accent) / 0.2);
+  color: hsl(var(--accent));
+  border: 1px solid hsl(var(--accent));
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover {
+  background: hsl(var(--accent) / 0.3);
+  box-shadow: 0 0 10px hsl(var(--accent) / 0.3);
+}
+
+.hall-of-fame {
+  margin-top: 3rem;
+}
+
+.hall-of-fame h3 {
+  color: hsl(var(--accent));
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px hsl(var(--accent) / 0.5);
+}
+
+.fame-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.fame-item {
+  background: hsl(var(--card) / 0.3);
+  border: 2px solid hsl(var(--primary) / 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fame-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, hsl(var(--accent) / 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.fame-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.fame-item p {
+  color: hsl(var(--primary-foreground));
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.fame-item .votes {
+  color: hsl(var(--error));
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.toggle-view-button {
+  background: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary)));
+  border: none;
+  border-radius: 8px;
+  color: hsl(var(--primary-foreground));
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px hsl(var(--primary-foreground) / 0.5);
+  box-shadow: 0 0 10px hsl(var(--accent) / 0.5);
+  margin-left: auto;
+}
+
+.toggle-view-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px hsl(var(--accent) / 0.7);
+}
+
+.saved-memes-section {
+  padding: 2rem;
+  background: hsl(var(--card) / 0.6);
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.saved-memes-section h3 {
+  color: hsl(var(--primary));
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+.saved-memes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.saved-meme-card {
+  background: hsl(var(--card) / 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px hsl(var(--accent) / 0.3);
+  cursor: pointer;
+}
+
+.saved-meme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+}
+
+.saved-meme-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid hsl(var(--accent));
+}
+
+.saved-meme-info {
+  padding: 1rem;
+}
+
+.saved-meme-info h4 {
+  color: hsl(var(--accent));
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.saved-meme-info p {
+  color: hsl(var(--foreground));
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.saved-meme-info span {
+  color: hsl(var(--accent));
+  font-size: 0.8rem;
+}
+
+.meme-timestamp {
+  font-size: 0.8rem !important;
+  color: hsl(var(--accent)) !important;
+  opacity: 0.6 !important;
+}
+
+.delete-meme-button {
+  background: linear-gradient(45deg, hsl(var(--error)), hsl(var(--accent)));
+  border: none;
+  border-radius: 5px;
+  color: hsl(var(--primary-foreground));
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.delete-meme-button:hover {
+  background: linear-gradient(45deg, #ff00ff, #ff0000);
+  transform: scale(1.02);
+}
+
+.save-meme-form {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid #ff00ff;
+}
+
+.save-meme-form input,
+.save-meme-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+}
+
+.save-meme-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.save-meme-button {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.save-meme-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.saved-meme-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.saved-meme-actions button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-meme-button {
+  background: linear-gradient(45deg, #00ffff, #00ff9f);
+  color: #000;
+}
+
+.view-meme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.download-meme-button {
+  background: linear-gradient(45deg, #ff00ff, #ff0099);
+  color: white;
+}
+
+.download-meme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+.delete-meme-button {
+  background: linear-gradient(45deg, #ff0000, #ff00ff);
+  color: white;
+}
+
+.delete-meme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.meme-template {
+  border: 2px solid hsl(var(--primary));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.1);
+}
+
+.meme-text-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 2px solid hsl(var(--primary));
+  border-radius: 0.5rem;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+}
+
+.saved-meme {
+  border: 2px solid hsl(var(--primary));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.1);
+} 

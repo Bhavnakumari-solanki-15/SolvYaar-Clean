@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - math-wizard-network
+    volumes:
+      - redis-data:/data
+
+  fluvio:
+    image: infinyon/fluvio:latest
+    ports:
+      - "9003:9003"
+    networks:
+      - math-wizard-network
+    depends_on:
+      - redis
+
+networks:
+  math-wizard-network:
+    driver: bridge
+
+volumes:
+  redis-data: 
