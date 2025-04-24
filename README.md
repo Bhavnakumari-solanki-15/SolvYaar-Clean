@@ -181,7 +181,7 @@ Mathematics education faces significant challenges with high student anxiety, ab
 ---
 📽️ Demo and Deliverables
 * **Demo Video Link:** [Youtube Link](https://youtu.be/)
-* **Live Site:** [SolvYaar](https://solvyaar.netlify.app/)
+* **Live Site:** [SolvYaar](https://solvyaar-web.netlify.app/)
 * **GitHub Repository:** [SolvYaar-Clean](https://github.com/Bhavnakumari-solanki-15/SolvYaar-Clean)
 * **PPT Link:**[PPT](https://solvyaar.netlify.app/)
 
