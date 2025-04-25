@@ -107,6 +107,15 @@ Mathematics education faces significant challenges with high student anxiety, ab
 
 * ✅ **AI-Powered Math Solver (Groq):** Get step-by-step solutions to complex math problems with detailed explanations powered by fast Groq inference.
 
+
+  ![image](https://github.com/user-attachments/assets/6d8c7b7f-d2bf-4463-bff6-d10e744514eb)
+  ![image](https://github.com/user-attachments/assets/9d83c4c5-694a-43f5-9104-10f06fdc9381)
+  ![image](https://github.com/user-attachments/assets/853ef9c7-338c-4694-9a41-98c36674a123)
+  ![image](https://github.com/user-attachments/assets/7cc0497c-db29-4eca-ae24-ada2d1819433)
+
+
+
+
 * ✅ **Math Personas Chat:** Interact with unique AI math mentors with distinct personalities and teaching styles - from the ancient meme lord Pytha-Gawd to the dramatic Chaos Calculus.
 
 * ✅ **Blockchain Achievement System (Monad):** Earn and mint unique NFT badges on the Monad Testnet when you master mathematical concepts, with full MetaMask wallet integration.
