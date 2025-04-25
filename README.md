@@ -189,11 +189,14 @@ Mathematics education faces significant challenges with high student anxiety, ab
 
 ---
 📽️ Demo and Deliverables
-* **Demo Video Link:** [Youtube Link](https://youtu.be/)
+* **Demo Video Link:** [Youtube Link](https://youtu.be/yanP2p_4RyM)
 * **Live Site:** [SolvYaar](https://solvyaar.netlify.app/)
 * **GitHub Repository:** [SolvYaar-Clean](https://github.com/Bhavnakumari-solanki-15/SolvYaar-Clean)
-* **PPT Link:**[PPT](https://solvyaar.netlify.app/)
+* **PPT Link:**[PPT](https://drive.google.com/drive/folders/1Ijge-01fxbDtGiNY0IsW9ElDpPS1jKia?usp=sharing)
 
+For Accessing Dashboard section in SolvYaar
+* Demo Admin login Username - dev@web.com
+* Demo Admin login Password - dev12345
 ---
 
 ## ✅ Tasks & Bonus Checklist
