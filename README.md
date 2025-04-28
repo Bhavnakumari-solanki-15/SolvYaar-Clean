@@ -84,7 +84,7 @@ Mathematics education faces significant challenges with high student anxiety, ab
 * **Libraries:** [MathJax](https://www.mathjax.org/)/[KaTeX](https://katex.org/) (math rendering), [D3.js](https://d3js.org/) (visualizations), [React Router](https://reactrouter.com/)
 * **State Management:** React Context API, Custom Hooks
 * **Authentication:** [Supabase Auth](https://supabase.com/auth)
-* **Hosting:** [Vercel](https://vercel.com/)
+* **Hosting:** [Netlify](https://app.netlify.com/)
 ### Sponsor Technologies Used:
 
 * [✅] **Groq:** Powers the AI-driven math assistance features (problem solving, explanations, personas) via `src/services/groqService.ts`. Enables fast response times for complex mathematical queries, generates creative math content for the Math Chaos section (`src/components/math-chaos`), and provides accurate step-by-step solution explanations.
